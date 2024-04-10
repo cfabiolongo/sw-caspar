@@ -3,7 +3,7 @@
 This is the repository of the Python (3.7+) implementation of SW-CASPAR (Semantic Web-Cognitive Architecture System Planned and Reactive), which
 is an alternative version of [CASPAR](https://github.com/cfabiolongo/pycaspar) able to make reasoning on the Semantic Web.
 
-![Image 1](https://github.com/cfabiolongo/sw-caspar/blob/master/images/sw-caspar.JPG)
+![Image 1](/images/sw-caspar.JPG)
 
 # Installation
 
@@ -170,19 +170,19 @@ eShell: main > +FEED("When an American sells weapons to a hostile nation, that A
 
 Here is all taxonomic relations (by opening the ontology file with Protege) after the such assertions:
  
-![Image 2](https://github.com/cfabiolongo/sw-caspar/blob/master/images/west-taxo.JPG)
+![Image 2](/images/west-taxo.JPG)
 
 Here is all individuals. The number related to each sentence will always be different depending on the timestamp:
  
-![Image 3](https://github.com/cfabiolongo/sw-caspar/blob/master/images/west-ind.JPG)
+![Image 3](/images/west-ind.JPG)
 
 Here is all non-taxonomic relations related to the individual "Be.426837":
  
-![Image 4](https://github.com/cfabiolongo/sw-caspar/blob/master/images/west-nontaxo.JPG)
+![Image 4](/images/west-nontaxo.JPG)
 
 Here's all axioms:
  
-![Image 5](https://github.com/cfabiolongo/sw-caspar/blob/master/images/west-rules.JPG)
+![Image 5](/images/west-rules.JPG)
 
 ### Reasoning
 
@@ -191,7 +191,7 @@ Here's all axioms:
 Thanks to all relations and axioms, we can make reasoning (with Hermit/Pellet) and infer the following further
 relations referred to the individual "Colonel_West.791305":
 
-![Image 6](https://github.com/cfabiolongo/sw-caspar/blob/master/images/west-criminal.JPG)
+![Image 6](/images/west-criminal.JPG)
 
 
 ### Meta-Reasoning
@@ -209,11 +209,11 @@ eShell: main > +FEED("When a patient has diastolic blood pressure greater than 1
 ```
 Here's ontology details like seen previously:
 
-![Image 7](https://github.com/cfabiolongo/sw-caspar/blob/master/images/health-taxo.JPG)
-![Image 8](https://github.com/cfabiolongo/sw-caspar/blob/master/images/health-ind.JPG)
-![Image 9](https://github.com/cfabiolongo/sw-caspar/blob/master/images/health-nontaxo1.JPG)
-![Image 10](https://github.com/cfabiolongo/sw-caspar/blob/master/images/health-nontaxo2.JPG)
-![Image 11](https://github.com/cfabiolongo/sw-caspar/blob/master/images/health-rules.JPG)
+![Image 7](/images/health-taxo.JPG)
+![Image 8](/images/health-ind.JPG)
+![Image 9](/images/health-nontaxo1.JPG)
+![Image 10](/images/health-nontaxo2.JPG)
+![Image 11](/images/health-rules.JPG)
 
 Considering the triggering conditions of the rule in line 21-22 of smart_env_int.py:
 
@@ -237,7 +237,7 @@ eShell: main > +STT("Give Rinazina to Robinson Crusoe")]
 In such case, together with the evaluation of the ActiveBelief *lemma_in_syn(X, "give.v.19")* (which will check a proper verb), the ActiveBelief *eval_sem(T, "Hypertensive")* will invoke the reasoner pellet and check for membership
 of *Robinson Crusoe* to the class *Hypertensive*.
 
-![Image 12](https://github.com/cfabiolongo/sw-caspar/blob/master/images/health-hypertensive.JPG)
+![Image 12](/images/health-hypertensive.JPG)
 
 In this case, the first production rule will be triggered and the agent will not provide the drug to the patient.
 Otherwise, the second production rule will be triggered and the agent won't have obection to provide the drug to the patient.
