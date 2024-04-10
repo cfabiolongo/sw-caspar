@@ -1,11 +1,13 @@
 from phidias.Lib import *
 from actions import *
 from sensors import *
+from qa_shifter import *
 
 
 # Clauses KB manual feeding beliefs
 class FEED(Reactor): pass
 class QUERY(Reactor): pass
+class QUESTION(Reactor): pass
 
 # Front-End STT
 
@@ -45,7 +47,7 @@ s2() >> [simulate_sensor("Be", "Temperature", "25")]
 +QUERY(X) >> [reset_ct(), parse_rules(X, "DISOK"), parse_deps(), feed_mst(), +PROCESS_STORED_MST("OK"), log("Query",X), show_ct(), +REASON("TEST")]
 +PROCESS_STORED_MST("OK") / LISTEN("TEST") >> [show_line("\nGot it.\n"), create_onto("NOMINAL"), process_rule(), -LISTEN("TEST")]
 +PROCESS_STORED_MST("OK") / REASON("TEST") >> [show_line("\nGot it.\n"), create_onto("NOMINAL"), -REASON("TEST")]
-
++QUESTION(X) >> [reset_ct(),  log("Query", X), assert_sequence(X), getcand(), tense_debt_paid(), show_ct()]
 
 # Hotwords processing
 +HOTWORD_DETECTED("ON") / WAIT(W) >> [show_line("\n\nYes, I'm here!\n"), HotwordDetect().stop(), beep(), UtteranceDetect().start(), +WAKE("ON"), Timer(W).start()]
