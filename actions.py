@@ -1784,8 +1784,6 @@ class create_IMP_MST_ACT(Action):
 
 # AD-CASPAR Section
 
-
-
 class assert_sequence(Action):
     def execute(self, arg1):
         sentence = str(arg1).split("'")[3]

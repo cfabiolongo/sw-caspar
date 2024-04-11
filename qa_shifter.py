@@ -91,6 +91,27 @@ class check_cop(ActiveBelief):
 
 
 
+class build_sparql(Action):
+    def execute(self, *args):
+       seq = str(args).split("'")
+       print(seq)
+
+       query = "PREFIX : <http://test.org/west.owl#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
+       query = query+""
+
+       # new_seq = ""
+       # for s in seq:
+       #     if s not in ['(', ', ', '', 'Variable', '), ', '))', ')']:
+       #         if len(new_seq) == 0:
+       #             new_seq = s
+       #         else:
+       #             new_seq = new_seq + " " + s
+       #
+       # new_seq_revised = new_seq.replace(" ---", ",")
+       # print(new_seq_revised)
+       # self.assert_belief(CAND(new_seq_revised))
+
+
 
 
 
@@ -101,7 +122,7 @@ getcand() / SEQ(X) >> [show_line("\nPOLAR....\n"), -SEQ(X), +CAND(X)]
 
 # --- WHO ---
 # who is Donald Trump?
-getcand() / (SEQ(X, A, Y, V, O, K) & CASE("who") & null(X, A, Y) & check_cop(V)) >> [show_line("\nWHO cop 3 null..."), -SEQ(X, A, Y, V, O, K), join_seq("Dummy", V, O, K), join_seq(K, V, O, "Dummy"), getcand()]
+getcand() / (SEQ(X, A, Y, V, O, K) & CASE("who") & null(X, A, Y) & check_cop(V)) >> [show_line("\nWHO cop 3 null..."), -SEQ(X, A, Y, V, O, K), build_sparql("Dummy", V, O, K), join_seq("Dummy", V, O, K), join_seq(K, V, O, "Dummy"), getcand()]
 # who wants to be king?
 getcand() / (SEQ(X, A, Y, V, O, K) & CASE("who") & null(X, A, Y)) >> [show_line("\nWHO 3 null..."), -SEQ(X, A, Y, V, O, K), join_seq("Dummy", V, O, K), getcand()]
 # who could be the president of United States?
