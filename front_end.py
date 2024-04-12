@@ -13,13 +13,6 @@ class QUESTION(Reactor): pass
 
 # SIMULATING EVENTS
 
-# simulating routines
-r1() >> [+WAKE("TEST"), +STT("turn off the lights in the living room, when the temperature is 25 and the time is 12")]
-r2() >> [+WAKE("TEST"), +STT("set the cooler in the bedroom to 25 degrees and cut the grass in the garden, when the time is 12")]
-
-# simulating direct commands
-d1() >> [+WAKE("TEST"), +STT("set the cooler at 27 degrees in the bedroom")]
-d2() >> [+WAKE("TEST"), +STT("Give Rinazina to Robinson Crusoe")]
 
 # sentences for reasoning purposes
 c1() >> [+FEED("The Colonel West is an American")]

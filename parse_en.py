@@ -33,7 +33,7 @@ class Parse(object):
         print("\nNLP engine initializing. Please wait...")
 
         # python -m spacy download en_core_web_lg
-        self.nlp = spacy.load('en_core_web_lg')  # 789 MB
+        self.nlp = spacy.load('en_core_web_trf')  # 789 MB
 
         if platform.system() == "Windows":
             os.system('cls')
@@ -448,18 +448,13 @@ def main():
     LEMMMATIZED = True
     DISOK = True
 
-    sentence = "They had to journey from Heathrow to Edinburgh by overnight coach"
+    sentence = "They are going to travel from Heathrow to Edinburgh by overnight coach"
     deps = parser.get_deps(sentence, LEMMMATIZED, DISOK)
     parser.set_last_deps(deps)
     ner = parser.get_last_ner()
     print("\nner: ", ner)
 
     print("\n" + str(deps))
-
-
-    MST = parser.create_MST(deps, 'e', 'x')
-    print("\nMST: \n" + str(MST))
-
 
 
 
