@@ -5,12 +5,7 @@ sparql = SPARQLWrapper("http://dbpedia.org/sparql")
 
 # Query string
 query = """
-    PREFIX dct: <http://purl.org/dc/terms/>
-    PREFIX dbc: <http://dbpedia.org/resource/Category:>
-    SELECT DISTINCT ?uri
-    WHERE {
-        ?uri dct:subject dbc:Assassins_of_Julius_Caesar
-    }
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?uri WHERE { ?uri dbo:publisher res:GMT_Games }
 """
 
 # Set the query string
