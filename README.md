@@ -23,9 +23,8 @@ This repository has been tested on Python 3.7.3 64bit on Windows 10, with the fo
 
 ```sh
 > git clone https://github.com/corradosantoro/phidias
-> python setup.py install
-> python -m pip install pyreadline
-> python -m pip install parse
+> pip install -r requirements.txt
+> pip install .
 ```
 
 ### spaCy
@@ -33,8 +32,8 @@ This repository has been tested on Python 3.7.3 64bit on Windows 10, with the fo
 ---------------
 
 ```sh
-> python -m pip install spacy
-> python -m spacy download en_core_web_lg
+> pip install spacy
+> python -m spacy download en_core_web_trf
 ```
 
 
@@ -44,7 +43,7 @@ This repository has been tested on Python 3.7.3 64bit on Windows 10, with the fo
 
 from prompt:
 ```sh
-> python -m pip install nltk
+> pip install nltk
 ```
 from python console:
 ```sh
@@ -58,18 +57,7 @@ from python console:
 
 from prompt:
 ```sh
-> python -m pip install owlready2
-```
-
-
-
-### pyttsx3 (Text-to-Speech)
-
----------------
-
-from prompt:
-```sh
-> python -m pip install pyttsx3
+> pip install owlready2
 ```
 
 

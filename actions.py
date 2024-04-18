@@ -4,7 +4,6 @@ from nl_to_fol import *
 
 from phidias.Types import *
 import configparser
-import pyttsx3
 from datetime import datetime
 from owlready2 import *
 
